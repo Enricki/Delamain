@@ -110,6 +110,13 @@ namespace StarterAssets
 			_fallTimeoutDelta = FallTimeout;
 		}
 
+
+		private void OnTriggerEnter(Collider other)
+		{
+			other.GetComponent<IInteractable>().Interact();
+			
+		}
+
 		private void Update()
 		{
 			JumpAndGravity();
